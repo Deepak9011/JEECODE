@@ -1,0 +1,16 @@
+.logo {
+    float: left;
+}
+
+ul{
+    list-style: none;
+}
+li{
+    display: inline-block;
+}
+.nav-right{
+    float: right;
+}
+.nav-center{
+    float: center;
+}

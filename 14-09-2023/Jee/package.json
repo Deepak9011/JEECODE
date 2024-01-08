@@ -1,0 +1,21 @@
+{
+  "name": "jee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "method": "^2.0.0",
+    "method-override": "^3.0.0",
+    "override": "^0.0.1",
+    "pg": "^8.11.3",
+    "uuid": "^9.0.1"
+  }
+}

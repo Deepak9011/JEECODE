@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Question Page</title>
+    <link rel="stylesheet" type="text/css" href="/CSS/practicePage.css">
+    <script>
+        window.onload = function () {
+            let time = 180;
+            const timerDisplay = document.querySelector('.timer');
+            const answerOptions = document.querySelectorAll("input[type='radio']");
+            const submitButton = document.getElementById("checkBtn");
+
+            const timerInterval = setInterval(function () {
+                time--;
+                const minutes = Math.floor(time / 60);
+                const seconds = time % 60;
+                timerDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                if (time <= 0) {
+                    clearInterval(timerInterval);
+                    alert('Time is up!');
+                    submitButton.click();
+                }
+            }, 1000);
+
+            submitButton.addEventListener("click", function() {
+                clearInterval(timerInterval);
+                answerOptions.forEach(function(option, index) {
+                    if (option.value === "<%= question.correctOption %>") {
+                        option.nextElementSibling.style.backgroundColor = "green";
+                        option.nextElementSibling.innerHTML += " (Correct Answer)";
+                    }
+                    if (option.checked && option.value !== "<%= question.correctOption %>") {
+                        option.nextElementSibling.style.backgroundColor = "red";
+                    }
+                });
+            });
+        }
+    </script>
+
+</head>
+
+</html>
